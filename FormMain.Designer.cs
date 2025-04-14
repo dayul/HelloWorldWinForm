@@ -32,14 +32,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.찾기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.저장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.끝내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helloWorld정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.열기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.저장ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,6 +92,21 @@
             this.찾기ToolStripMenuItem.Text = "파일";
             this.찾기ToolStripMenuItem.Click += new System.EventHandler(this.찾기ToolStripMenuItem_Click);
             // 
+            // 열기ToolStripMenuItem
+            // 
+            this.열기ToolStripMenuItem.Name = "열기ToolStripMenuItem";
+            this.열기ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.열기ToolStripMenuItem.Text = "열기";
+            this.열기ToolStripMenuItem.Click += new System.EventHandler(this.열기ToolStripMenuItem_Click);
+            // 
+            // 저장ToolStripMenuItem
+            // 
+            this.저장ToolStripMenuItem.Name = "저장ToolStripMenuItem";
+            this.저장ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.저장ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.저장ToolStripMenuItem.Text = "저장";
+            // 
             // 끝내기ToolStripMenuItem
             // 
             this.끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
@@ -127,16 +142,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "간단 메모장";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblTitle);
-            this.groupBox2.Location = new System.Drawing.Point(459, 39);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(187, 172);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "버튼 클릭 연습";
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(21, 26);
@@ -148,19 +153,15 @@
             this.textBox1.WordWrap = false;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // 열기ToolStripMenuItem
+            // groupBox2
             // 
-            this.열기ToolStripMenuItem.Name = "열기ToolStripMenuItem";
-            this.열기ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.열기ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.열기ToolStripMenuItem.Text = "열기";
-            // 
-            // 저장ToolStripMenuItem
-            // 
-            this.저장ToolStripMenuItem.Name = "저장ToolStripMenuItem";
-            this.저장ToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.저장ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.저장ToolStripMenuItem.Text = "저장";
+            this.groupBox2.Controls.Add(this.lblTitle);
+            this.groupBox2.Location = new System.Drawing.Point(459, 39);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(187, 172);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "버튼 클릭 연습";
             // 
             // FormMain
             // 
