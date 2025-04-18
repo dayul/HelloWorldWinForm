@@ -92,6 +92,8 @@ namespace HelloWorldWinForm
                         textBox1.Text = reader.ReadToEnd();
                         lblModify.Text = "";
                         ORIGINAL_FILE_CONTENT = textBox1.Text;
+                        lblModify.Text = "";
+                        ORIGINAL_FILE_CONTENT = textBox1.Text;
                     }
                     fileStream.Close();
                     break;
@@ -101,6 +103,125 @@ namespace HelloWorldWinForm
                     break;
                     
             }
+        }
+
+        private void 저장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(lblFileName.Text == FILE_DEFAULT_NAME)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = FILENAME_FILTER;
+                DialogResult result = saveFileDialog.ShowDialog();
+
+                if (DialogResult == DialogResult.Cancel)
+                {
+                    return;
+                }
+                lblFileName.Text = saveFileDialog.FileName;
+            }
+
+            var fileStream = new FileStream(lblFileName.Text, FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(fileStream))
+            {
+                writer.Write(textBox1.Text);
+                writer.Close();
+                lblModify.Text = "";
+                ORIGINAL_FILE_CONTENT = textBox1.Text;
+            }
+            
+        }
+
+        private void 다른이름으로저장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = FILENAME_FILTER;
+            saveFileDialog.FileName = lblFileName.Text;
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            if (DialogResult == DialogResult.Cancel)
+            {
+                return;
+            }
+            lblFileName.Text = saveFileDialog.FileName;
+            var fileStream = new FileStream(lblFileName.Text, FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(fileStream))
+            {
+                writer.Write(textBox1.Text);
+                writer.Close();
+            }
+             private void 저장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lblFileName.Text == FILE_DEFAULT_NAME)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = FILENAME_FILTER;
+                DialogResult result = saveFileDialog.ShowDialog();
+
+                if (DialogResult == DialogResult.Cancel)
+                {
+                    return;
+                }
+                lblFileName.Text = saveFileDialog.FileName;
+            }
+
+            var fileStream = new FileStream(lblFileName.Text, FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(fileStream))
+            {
+                writer.Write(textBox1.Text);
+                writer.Close();
+                lblModify.Text = "";
+                ORIGINAL_FILE_CONTENT = textBox1.Text;
+            }
+
+        }
+
+        private void 다른이름으로저장ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = FILENAME_FILTER;
+            saveFileDialog.FileName = lblFileName.Text;
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            if (DialogResult == DialogResult.Cancel)
+            {
+                return;
+            }
+            lblFileName.Text = saveFileDialog.FileName;
+            var fileStream = new FileStream(lblFileName.Text, FileMode.Create);
+            using (StreamWriter writer = new StreamWriter(fileStream))
+            {
+                writer.Write(textBox1.Text);
+                writer.Close();
+                lblModify.Text = "";
+                ORIGINAL_FILE_CONTENT = textBox1.Text;
+            }
+        }
+
+        private void 새로만들기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 이터널 코드, 매직 넘버는 상수로 선언하기
+            textBox1.Text = TEXTBOX_DEFAULT_MESSAGE;
+            lblFileName.Text = FILE_DEFAULT_NAME;
+            lblModify.Text = "";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != ORIGINAL_FILE_CONTENT)
+            {
+                lblModify.Text = FILE_MODIFY_SYMBOL;
+            }
+            else
+            {
+                lblModify.Text = "";
+            }
+
+        }
+
+        //private void statusStrip1_TextChanged(object sender, EventArgs e)
+        //{
+        //    //lblModify.Text = FILE_MODIFY_SYMBOL;
+        //}
         }
 
         private void 저장ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,5 +297,5 @@ namespace HelloWorldWinForm
         //{
         //    //lblModify.Text = FILE_MODIFY_SYMBOL;
         //}
-    }
+}
 }
